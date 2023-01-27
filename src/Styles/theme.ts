@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react";
-import { m } from "framer-motion";
 
 export const theme = extendTheme({
   breakpoints: {
@@ -12,8 +11,14 @@ export const theme = extendTheme({
   colors: {
     "primary-green": "#6D9E68",
     "secudary-white": "#FFFFFF",
-    "bg-primary": "#F5F5DC",
+    "bg-primary": "#F0F0F0",
     "button-bg": "#9ACD32",
   },
-  
+  styles: {
+    global: {
+      body: {
+        color: "#444"
+      },
+    },
+  },
 });
