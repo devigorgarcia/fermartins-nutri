@@ -4,6 +4,7 @@ import { MenuToggle } from "./MenuToggle";
 import { NavLinks } from "./NavLinks";
 import { useEffect, useState } from "react";
 import logoFer from "../../assets/123607.svg";
+import { Element } from "react-scroll";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export const Header = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <>
+    <Element name="top">
       <Flex
         as="nav"
         align="center"
@@ -40,7 +41,11 @@ export const Header = () => {
         <Flex align={"center"} gap="0.25rem" flexDir={"column"}>
           <Image src={logoFer} width="150px" />
           <Flex flexDir={"column"} align={"center"}>
-            <Heading letterSpacing={'2px'} fontSize={"24px"} fontFamily={"Great Vibes, cursive;"}>
+            <Heading
+              letterSpacing={"2px"}
+              fontSize={"24px"}
+              fontFamily={"Great Vibes, cursive;"}
+            >
               Fernanda Martins
             </Heading>
             <Text fontSize={"14px"}>Nutricionista - CRN3 55526</Text>
@@ -49,6 +54,6 @@ export const Header = () => {
         <MenuToggle isOpen={isOpen} toggle={toggle} />
         <NavLinks isOpen={isOpen} setIsOpen={setIsOpen} />
       </Flex>
-    </>
+    </Element>
   );
 };

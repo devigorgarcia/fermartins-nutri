@@ -4,7 +4,7 @@ import Fer from "../../assets/fer.png";
 export const AboutMe = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <Flex align="center" justify={"center"} flexDir="column" gap={"1rem"} p='4rem 0'>
+    <Flex align="center" justify={"center"} flexDir="column" gap={"1rem"} p='4rem 0' id="aboutMe">
       <Heading>SOBRE MIM</Heading>
       <Flex
         flexDir={{ base: "column", md: "row-reverse" }}

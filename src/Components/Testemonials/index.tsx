@@ -9,6 +9,7 @@ export const Testemonials = () => {
       align="center"
       justify={"center"}
       p="4rem 0"
+      id='testemonials'
     >
       <Heading fontSize={"45px"}>Depoimentos</Heading>
       <Text fontSize={"18px"} w="90%" margin="01rem auto" textAlign={"center"}>

@@ -18,6 +18,7 @@ export const Hero = () => {
           align="center"
           justify={"center"}
           rounded="10px"
+          id="main"
         >
           <Flex flexDir={"column"} align="center" justify={"center"} gap="2rem">
             <ParallaxBannerLayer style={{ margin: "2rem 0" }}>
@@ -41,7 +42,7 @@ export const Hero = () => {
                 >
                   <MdTipsAndUpdates color="white" size={"25px"} />
                 </Box>
-                <Heading>DICA DA NUTRI</Heading>
+                <Heading>DICAS DA NUTRI</Heading>
               </Flex>
             </ParallaxBannerLayer>
 

@@ -19,9 +19,9 @@ export const NavLinks = ({ isOpen, setIsOpen }: INavLinksProps) => {
           Início
         </MenuItem>
         <MenuItem setIsOpen={setIsOpen} isOpen={isOpen} to="#main">
-          Principal
+          Dicas da Nutri
         </MenuItem>
-        <MenuItem setIsOpen={setIsOpen} isOpen={isOpen} to="#about">
+        <MenuItem setIsOpen={setIsOpen} isOpen={isOpen} to="#aboutMe">
           Sobre
         </MenuItem>
         <MenuItem setIsOpen={setIsOpen} isOpen={isOpen} to="#services">

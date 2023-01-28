@@ -4,7 +4,7 @@ import { ServicesCard } from "./ServicesCard";
 
 export const Services = () => {
   return (
-    <Flex flexDir={"column"} gap="2rem" p="0">
+    <Flex flexDir={"column"} gap="2rem" p="0" id="services">
       <Heading alignSelf={"center"} fontSize={"45px"}>
         Serviços
       </Heading>
