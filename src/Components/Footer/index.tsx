@@ -49,8 +49,9 @@ export const Footer = () => {
         flexDir={"column"}
         gap="0.5rem"
         align={{ base: "center", md: "flex-start" }}
-        w="100%"
+        w="50%"
         mt={{ base: 0, md: "10px" }}
+        pl={{base: 0, md: '3rem'}}
       >
         <Heading color={"white"}>Links Uteis</Heading>
         <Flex flexDir={"column"} gap="0.5rem">
@@ -97,7 +98,7 @@ export const Footer = () => {
           </Flex>
         </Flex>
       </Flex>
-      <VStack mt={{ base: 0, md: "10px" }} gap="0.5rem">
+      <VStack w='100%' mt={{ base: 0, md: "10px" }} gap="0.5rem">
         <Heading mb={{ base: "20px", md: "2rem" }} color={"white"}>
           Socials
         </Heading>
