@@ -23,7 +23,6 @@ export const Footer = () => {
       color="black"
       p="4rem 2rem"
       align={{ base: "center", md: "flex-start" }}
-      justify="space-between"
       flexDir={{ base: "column", md: "row" }}
       gap="2rem"
     >
@@ -39,7 +38,7 @@ export const Footer = () => {
             Fernanda Martins
           </Text>
         </Flex>
-        <Text width={{ base: "100%", md: "50%" }}>
+        <Text width={{ base: "100%", md: "100%" }}>
           Acredito que a nutrição é a chave para o equilíbrio e saúde e estamos
           comprometidos em ajudá-lo a alcançar seus objetivos. Com orientação
           personalizada e um plano de ação especializado, juntos, vamos
@@ -51,14 +50,15 @@ export const Footer = () => {
         gap="0.5rem"
         align={{ base: "center", md: "flex-start" }}
         w="100%"
-        mt={{ base: 0, md: "70px" }}
+        mt={{ base: 0, md: "10px" }}
       >
         <Heading color={"white"}>Links Uteis</Heading>
-        <Flex flexDir={"column"} gap='0.5rem'>
+        <Flex flexDir={"column"} gap="0.5rem">
           <Flex
             align={"center"}
             gap="0.5rem"
             _hover={{ color: "white", fontWeight: "bold" }}
+            mt={{ base: "20px", md: "2rem" }}
           >
             <BsLink45Deg size="18px" />
             <Link href="#aboutMe">Sobre Mim</Link>
@@ -97,9 +97,11 @@ export const Footer = () => {
           </Flex>
         </Flex>
       </Flex>
-      <VStack w="100%" mt={{ base: 0, md: "70px" }} gap="0.5rem">
-        <Heading color={"white"}>Socials</Heading>
-        <HStack spacing={6}>
+      <VStack mt={{ base: 0, md: "10px" }} gap="0.5rem">
+        <Heading mb={{ base: "20px", md: "2rem" }} color={"white"}>
+          Socials
+        </Heading>
+        <Flex gap="1.4rem">
           <Tooltip label="Instagram">
             <Link
               _hover={{ textDecor: "none" }}
@@ -181,7 +183,7 @@ export const Footer = () => {
               </Flex>
             </Link>
           </Tooltip>
-        </HStack>
+        </Flex>
       </VStack>
     </Flex>
   );
