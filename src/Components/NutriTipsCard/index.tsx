@@ -29,7 +29,7 @@ export const NutriTipsCard = ({ children, src, title }: INutriTipsProps) => {
   };
 
   return (
-    <Card maxW="sm" minW="300px">
+    <Card maxW="sm" minW="150px">
       <CardBody onClick={handleToggle} cursor="pointer">
         <Box position="relative">
           <Image opacity={isHovered ? 1 : 0.7} src={src} borderRadius="lg" />

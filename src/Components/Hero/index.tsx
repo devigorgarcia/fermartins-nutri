@@ -4,7 +4,7 @@ import { NutriTipsCard } from "../NutriTipsCard";
 
 export const Hero = () => {
   return (
-    <Flex bg="primary-green" color="white" gap={"2rem"}>
+    <Flex bg="primary-green" color="white" p='2rem 0' gap={"2rem"}>
       <Container maxW={"100%"}>
         <Flex flexDir={"column"} align="center" justify={"center"} gap="2rem">
           <Heading mt="1rem">DICA DA NUTRI</Heading>
