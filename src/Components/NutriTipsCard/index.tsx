@@ -3,11 +3,13 @@ import {
   Card,
   CardBody,
   chakra,
+  Collapse,
   Heading,
   Image,
   shouldForwardProp,
   Stack,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { isValidMotionProp, motion } from "framer-motion";
 import { ReactNode, useState } from "react";
@@ -20,27 +22,15 @@ export interface INutriTipsProps {
 
 export const NutriTipsCard = ({ children, src, title }: INutriTipsProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [cardHeigth, setCardHeigth] = useState("100px");
+  const { isOpen, onToggle } = useDisclosure();
+  const handleToggle = () => {
+    onToggle();
+    setIsHovered(!isHovered);
+  };
 
-  const ChakraBox = chakra(motion.div, {
-    shouldForwardProp: (prop: any) =>
-      isValidMotionProp(prop) || shouldForwardProp(prop),
-  });
   return (
-    <Card
-      maxW="sm"
-      minW="300px"
-      as={motion.div}
-      onHoverStart={() => {
-        setIsHovered(true);
-        setCardHeigth("auto");
-      }}
-      onHoverEnd={() => {
-        setIsHovered(false);
-        setCardHeigth("100px");
-      }}
-    >
-      <CardBody>
+    <Card maxW="sm" minW="300px">
+      <CardBody onClick={handleToggle} cursor="pointer">
         <Box position="relative">
           <Image opacity={isHovered ? 1 : 0.7} src={src} borderRadius="lg" />
           <Box>
@@ -54,28 +44,12 @@ export const NutriTipsCard = ({ children, src, title }: INutriTipsProps) => {
             </Heading>
           </Box>
         </Box>
-        <ChakraBox
-          as={motion.div}
-          whileHover={{
-            height: cardHeigth,
-            overflow: "hidden",
-          }}
-        >
-          <Stack
-            mt="6"
-            spacing="3"
-            as={motion.div}
-            animate={{ height: cardHeigth }}
-            exit={{ height: 0 }}
-          >
-            {isHovered ? (
-              <>
-                <Heading size="md">{title}</Heading>
-                <Text>{children}</Text>
-              </>
-            ) : null}
+        <Collapse in={isOpen} animateOpacity>
+          <Stack mt="6" spacing="3">
+            <Heading size="md">{title}</Heading>
+            <Text>{children}</Text>
           </Stack>
-        </ChakraBox>
+        </Collapse>
       </CardBody>
     </Card>
   );
