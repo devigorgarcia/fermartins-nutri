@@ -8,7 +8,7 @@ export const Testemonials = () => {
       flexDir={"column"}
       align="center"
       justify={"center"}
-      pt="1rem"
+      p="4rem 0"
     >
       <Heading fontSize={"45px"}>Depoimentos</Heading>
       <Text fontSize={"18px"} w="90%" margin="01rem auto" textAlign={"center"}>

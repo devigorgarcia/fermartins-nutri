@@ -4,13 +4,25 @@ import { ServicesCard } from "./ServicesCard";
 
 export const Services = () => {
   return (
-    <Flex align={"center"} justify="center" flexDir={"column"} gap="2rem" p="0">
-      <Heading fontSize={"45px"}>Serviços</Heading>
-      <Flex flexDir={"column"} align="center" justify="center" gap="2rem">
-        <Flex flexDir="column" align={"center"} w="100%">
-          <Heading fontSize="30px">Presencial</Heading>
+    <Flex flexDir={"column"} gap="2rem" p="0">
+      <Heading alignSelf={"center"} fontSize={"45px"}>
+        Serviços
+      </Heading>
+      <Flex flexDir={"column"} gap="2rem">
+        <Flex flexDir="column">
+          <Heading pl="4rem" alignSelf={"flex-start"} fontSize="30px">
+            Presencial
+          </Heading>
           <Divider m="1rem  0" />
-          <Flex gap={"1rem"} wrap="wrap" align={"center"} justify="center">
+          <Flex
+            gap="1rem"
+            align={"center"}
+            justify={{ base: "flex-start", lg: "center" }}
+            wrap={{ base: "nowrap", lg: "wrap" }}
+            overflowX={{ base: "auto", lg: "hidden" }}
+            w="100%"
+            p="0 1rem"
+          >
             <ServicesCard title="Reducação Alimentar" icon={RiBookOpenFill}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
               dolore delectus quos. Modi veniam doloremque fuga similique
@@ -50,14 +62,18 @@ export const Services = () => {
           </Flex>
         </Flex>
         <Flex flexDir={"column"} align="center" w="100%">
-          <Heading size="lg">Online</Heading>
+          <Heading size="lg" pl="4rem" alignSelf={"flex-start"} fontSize="30px">
+            Online
+          </Heading>
           <Divider m="1rem  0" />
           <Flex
-            w="100%"
-            gap={"1rem"}
-            wrap="wrap"
+            gap="1rem"
             align={"center"}
-            justify="center"
+            justify={{ base: "flex-start", lg: "center" }}
+            wrap={{ base: "nowrap", lg: "wrap" }}
+            overflowX={{ base: "auto", lg: "hidden" }}
+            w="100%"
+            p="0 1rem"
           >
             <ServicesCard title="Reducação Alimentar" icon={RiBookOpenFill}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui

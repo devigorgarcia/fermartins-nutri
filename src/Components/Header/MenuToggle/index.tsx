@@ -8,9 +8,9 @@ export const MenuToggle = ({ isOpen, toggle }: IMenuOpenProps) => {
     <>
       <Box onClick={toggle} display={{ base: "block", md: "none" }}>
         {isOpen ? (
-          <IoMdClose cursor="pointer" />
+          <IoMdClose size={"30px"} cursor="pointer" />
         ) : (
-          <GiHamburgerMenu cursor="pointer" />
+          <GiHamburgerMenu size={"30px"} cursor="pointer" />
         )}
       </Box>
     </>

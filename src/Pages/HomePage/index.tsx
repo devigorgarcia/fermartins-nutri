@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import { AboutMe } from "../../Components/About";
+import { Footer } from "../../Components/Footer";
 import { Header } from "../../Components/Header";
 import { Hero } from "../../Components/Hero";
 import { Services } from "../../Components/Services";
@@ -13,6 +14,7 @@ export const HomePage = () => {
       <Hero />
       <Services />
       <Testemonials />
+      <Footer />
     </Flex>
   );
 };

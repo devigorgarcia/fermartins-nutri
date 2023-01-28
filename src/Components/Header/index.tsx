@@ -40,10 +40,10 @@ export const Header = () => {
         <Flex align={"center"} gap="0.25rem" flexDir={"column"}>
           <Image src={logoFer} width="150px" />
           <Flex flexDir={"column"} align={"center"}>
-            <Heading fontSize={"26px"} fontFamily={"Great Vibes, cursive;"}>
+            <Heading letterSpacing={'2px'} fontSize={"24px"} fontFamily={"Great Vibes, cursive;"}>
               Fernanda Martins
             </Heading>
-            <Text fontSize={'14px'}>Nutricionista - CRN3 55526</Text>
+            <Text fontSize={"14px"}>Nutricionista - CRN3 55526</Text>
           </Flex>
         </Flex>
         <MenuToggle isOpen={isOpen} toggle={toggle} />
