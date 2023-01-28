@@ -49,7 +49,7 @@ export const Services = () => {
             </ServicesCard>
           </Flex>
         </Flex>
-        <Flex flexDir={"column"} align="center">
+        <Flex flexDir={"column"} align="center" w="100%">
           <Heading size="lg">Online</Heading>
           <Divider m="1rem  0" />
           <Flex
