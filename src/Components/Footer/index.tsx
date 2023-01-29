@@ -18,9 +18,22 @@ import {
 export const Footer = () => {
   return (
     <>
-      <Flex flexDir={"column"}>
-        <Flex w="100%" justify={"space-evenly"} bg="primary-green" p="3rem 0">
-          <Flex align={"center"} gap="0.25rem" flexDir={"column"} w="33%">
+      <Flex flexDir={{ base: "column" }}>
+        <Flex
+          w="100%"
+          justify={"space-evenly"}
+          bg="primary-green"
+          p="3rem 0"
+          gap="2rem"
+          flexDir={{ base: "column", lg: "row" }}
+        >
+          <Flex
+            align={"center"}
+            gap="0.25rem"
+            m={{ base: "0 auto", lg: 0 }}
+            flexDir={"column"}
+            w={{ base: "33%", lg: '20%' }}
+          >
             <Image src={logoFerWhite} width="250px" />
             <Flex flexDir={"column"} align={"center"}>
               <Text
@@ -42,7 +55,7 @@ export const Footer = () => {
           <Flex
             flexDir={"column"}
             gap="0.5rem"
-            align={{ base: "center", md: "flex-start" }}
+            align={{ base: "center", lg: "flex-start" }}
             mt={{ base: 0, md: "10px" }}
             pl={{ base: 0, md: "3rem" }}
           >
@@ -186,8 +199,8 @@ export const Footer = () => {
               target={"_blank"}
             >
               Igor Garcia
-            </Link>
-            {" "}&copy; 2022
+            </Link>{" "}
+            &copy; 2022
           </Text>
         </Flex>
       </Flex>
