@@ -1,4 +1,4 @@
-import { Divider, Flex } from "@chakra-ui/react";
+import { Button, Divider, Flex } from "@chakra-ui/react";
 import { AboutMe } from "../../Components/About";
 import { BackToTop } from "../../Components/backToTop";
 import { Contact } from "../../Components/Contact";

@@ -13,6 +13,8 @@ import {} from "react-hook-form";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { EmailTransactionalMessageData } from "@elasticemail/elasticemail-client-ts-axios";
+import { sendTransactionalEmails } from "../../../utils/email";
 
 export interface IFormData {
   name: string;
@@ -26,7 +28,7 @@ export const ContactForm = () => {
   const contactFormSchema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     email: yup.string().required("Campo Obrigatório").email("Email inválido"),
-    phone: yup.string().required("Campo Obrigatório"),
+    phone: yup.string().required("Campo Obrigatório").min(15).max(15),
     service: yup.string().required("Campo Obrigatório"),
     description: yup.string().required("Campo Obrigatório"),
   });
@@ -52,16 +54,60 @@ export const ContactForm = () => {
   };
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    console.log(data.phone.length);
+
+    const emailTransactionalMessageData: EmailTransactionalMessageData = {
+      Recipients: {
+        To: [data.email],
+      },
+      Content: {
+        Body: [
+          {
+            ContentType: "HTML",
+            Charset: "utf-8",
+            Content: `<strong>Contato Recebido por ${data.name}</strong>
+            <p>
+              Nome: <b>${data.name}</b><br />
+              E-mail: <b>${data.email}</b><br />
+              Telefone: <b>${data.phone}</b><br />
+              Serviço: <b>${data.service}</b><br />
+              Descrição: <b>${data.description}</b><br />
+          </p>            
+            `,
+          },
+          {
+            ContentType: "PlainText",
+            Charset: "utf-8",
+            Content: "Example content",
+          },
+        ],
+        From: "igorgarciatera2@gmail.com",
+        Subject: `Contato de ${data.name}`,
+      },
+    };
+
+    try {
+      sendTransactionalEmails(emailTransactionalMessageData);
+      toast({
+        title: "Formulario Enviado com sucesso",
+        description: "Nutri recebeu o formulario",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      toast({
+        title: "Houve um Erro",
+        description: "Email Inválido",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+
     reset();
-    toast({
-      title: "Formulario Enviado com sucesso",
-      description: "Nutri recebeu o formulario",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-      position: "top",
-    });
   };
 
   return (
