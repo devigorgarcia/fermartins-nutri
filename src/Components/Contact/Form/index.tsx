@@ -172,6 +172,7 @@ export const ContactForm = () => {
         colorScheme="green"
         color="white"
         width="100%"
+        maxWidth={'500px'}
         fontSize="22px"
         type="submit"
         h="50px"

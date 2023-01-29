@@ -28,7 +28,7 @@ export const Contact = () => {
           contato o mais breve possível com uma cotação personalizada.
         </Text>
         <ContactForm />
-        <HStack justify={"space-around"}>
+        <HStack maxW="1000px" margin="0 auto" spacing={40}>
           <Flex align={"center"} justify="center" gap="0.5rem">
             <BsWhatsapp size={"30px"} />
             <VStack spacing={-1} align="flex-start">
