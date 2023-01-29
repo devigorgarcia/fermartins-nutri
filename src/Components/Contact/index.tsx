@@ -1,21 +1,50 @@
-import { Box, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { ContactForm } from "./Form";
-import { BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { useState, useEffect } from "react";
 
 export const Contact = () => {
+  const [height, setHeight] = useState("");
+  const [width, setwidth] = useState("");
+
+  useEffect(() => {
+    handleWindow();
+    window.addEventListener("resize", handleWindow);
+    return () => window.removeEventListener("resize", handleWindow);
+  }, []);
+
+  const handleWindow = () => {
+    if (window.innerWidth < 1024) {
+      setHeight("300");
+      const newWidth = window.innerWidth - window.innerWidth * 0.35;
+      setwidth(String(newWidth));
+    } else {
+      setHeight("700");
+      const newWidth = window.innerWidth - window.innerWidth * 0.65;
+      setwidth(String(newWidth));
+    }
+  };
+
   return (
     <Flex
       bgGradient={{
         base: "linear(to-t, primary-green 20%, white 10%)",
-        md: "linear(to-l, primary-green 30%, white 10%)",
+        lg: "linear(to-l, primary-green 30%, white 10%)",
       }}
       p="3rem 4rem"
       gap="4rem"
-      flexDir={{ base: "column", md: "row" }}
+      flexDir={{ base: "column", lg: "row" }}
       align={{ base: "center" }}
+      id="contact"
     >
-      <Flex flexDir={"column"} gap="1.2rem">
+      <Flex
+        flexDir={"column"}
+        gap="1.2rem"
+        w="100%"
+        maxW={"1000px"}
+        margin={{ base: 0, lg: "0 auto" }}
+      >
         <Heading>
           Peça seu{" "}
           <Text as="span" color="primary-green">
@@ -28,13 +57,21 @@ export const Contact = () => {
           contato o mais breve possível com uma cotação personalizada.
         </Text>
         <ContactForm />
-        <HStack maxW="1000px" margin="0 auto" spacing={40}>
+        <Flex
+          maxW="500px"
+          w="100%"
+          margin="0 auto"
+          flexDir={{ base: "column", lg: "row" }}
+          align="flex-start"
+          justify={"center"}
+          gap="1rem"
+        >
           <Flex align={"center"} justify="center" gap="0.5rem">
             <BsWhatsapp size={"30px"} />
             <VStack spacing={-1} align="flex-start">
               <Text fontWeight="bold">WhatsApp</Text>
               <Text fontSize={"12px"} color="primary-green">
-                (11)11111-1111
+                (19) 99828-3714
               </Text>
             </VStack>
           </Flex>
@@ -42,20 +79,19 @@ export const Contact = () => {
             <MdOutlineMailOutline size={"38px"} />
             <VStack spacing={-1} align="flex-start">
               <Text fontWeight="bold">E-mail</Text>
-              <Text fontSize={"14px"} color="primary-green">
-                fermartins.nutri@gmail.com
+              <Text fontSize={"12px"} color="primary-green">
+                nutri.fermartins@outlook.com
               </Text>
             </VStack>
           </Flex>
-        </HStack>
+        </Flex>
       </Flex>
       <Flex>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8862.891407150202!2d-48.47081607962328!3d-20.936976013128827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bbe7f0024c9d75%3A0xbc1c8e0104def0c0!2sNutricionista%20Larissa%20T%C3%A1tero!5e0!3m2!1spt-BR!2sbr!4v1674960208428!5m2!1spt-BR!2sbr"
-          width="600"
-          height="700"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.1063152252673!2d-47.487072685630295!3d-21.853434506624485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8024c75da4483%3A0xb0e4a2c33dc0c8d4!2sR.%20Bento%20Jos%C3%A9%20de%20Carvalho%2C%20223%2C%20Porto%20Ferreira%20-%20SP%2C%2013660-000!5e0!3m2!1spt-BR!2sbr!4v1674965027835!5m2!1spt-BR!2sbr"
+          width={width}
+          height={height}
           loading="lazy"
-          id="mapa"
         ></iframe>
       </Flex>
     </Flex>

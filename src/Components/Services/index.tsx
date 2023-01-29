@@ -8,7 +8,7 @@ export const Services = () => {
       <Heading alignSelf={"center"} fontSize={"45px"}>
         Serviços
       </Heading>
-      <Flex flexDir={"column"} gap="2rem">
+      <Flex flexDir={"column"} m="1rem" p='1rem' gap="2rem" border={"1px solid #4444441f"} rounded='20px'>
         <Flex flexDir="column">
           <Heading pl="4rem" alignSelf={"flex-start"} fontSize="30px">
             Presencial

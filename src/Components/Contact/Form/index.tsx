@@ -109,14 +109,14 @@ export const ContactForm = () => {
       <FormControl isInvalid={!!errors.phone}>
         {!!errors.phone ? (
           <FormLabel color="red" htmlFor="phone">
-            Telefone
+            Celular
           </FormLabel>
         ) : (
-          <FormLabel htmlFor="phone">Telefone</FormLabel>
+          <FormLabel htmlFor="phone">Celular</FormLabel>
         )}
 
         <Input
-          placeholder="(12) 12345-6789"
+          placeholder="Digite seu Celular"
           id="phone"
           variant="flushed"
           {...register("phone")}
@@ -172,7 +172,7 @@ export const ContactForm = () => {
         colorScheme="green"
         color="white"
         width="100%"
-        maxWidth={'500px'}
+        maxWidth={"500px"}
         fontSize="22px"
         type="submit"
         h="50px"
