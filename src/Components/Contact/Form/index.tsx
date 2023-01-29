@@ -81,7 +81,7 @@ export const ContactForm = () => {
             Content: "Example content",
           },
         ],
-        From: data.email,
+        From: "igorgarciatera2@gmail.com",
         Subject: `Contato de ${data.name}`,
       },
     };
