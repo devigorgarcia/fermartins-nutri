@@ -16,6 +16,10 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
+      // "#mapa": {
+      //   width: "600px",
+      //   height: "700px",
+      // },
       body: {
         color: "#444",
       },

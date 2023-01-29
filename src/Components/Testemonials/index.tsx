@@ -9,7 +9,7 @@ export const Testemonials = () => {
       align="center"
       justify={"center"}
       p="4rem 0"
-      id='testemonials'
+      id="testemonials"
     >
       <Heading fontSize={"45px"}>Depoimentos</Heading>
       <Text fontSize={"18px"} w="90%" margin="01rem auto" textAlign={"center"}>
@@ -18,7 +18,7 @@ export const Testemonials = () => {
       <Flex
         gap="1rem"
         align={"center"}
-        justify="center"
+        justify={{ base: "flex-start", lg: "center" }}
         wrap={{ base: "nowrap", lg: "wrap" }}
         overflowX={{ base: "auto", lg: "hidden" }}
         w="100%"

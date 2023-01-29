@@ -1,6 +1,7 @@
-import { Flex } from "@chakra-ui/react";
+import { Divider, Flex } from "@chakra-ui/react";
 import { AboutMe } from "../../Components/About";
 import { BackToTop } from "../../Components/backToTop";
+import { Contact } from "../../Components/Contact";
 import { Footer } from "../../Components/Footer";
 import { Header } from "../../Components/Header";
 import { Hero } from "../../Components/Hero";
@@ -15,8 +16,10 @@ export const HomePage = () => {
       <Hero />
       <Services />
       <Testemonials />
+      <Divider />
+      <Contact />
       <Footer />
-      <BackToTop/>
+      <BackToTop />
     </Flex>
   );
 };
