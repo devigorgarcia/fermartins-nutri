@@ -58,7 +58,7 @@ export const ContactForm = () => {
 
     const emailTransactionalMessageData: EmailTransactionalMessageData = {
       Recipients: {
-        To: "igorgg@gmail.com",
+        To: ["igorgg@gmail.com"],
       },
       Content: {
         Body: [
